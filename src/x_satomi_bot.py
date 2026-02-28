@@ -25,7 +25,7 @@ def generate_tweet_content():
     【ルール】
     * 口調: フランクで少し姉御肌。「～わよ」「～かしら」等の語尾を使う。
     * 内容: 日常で感じるネガティブな感情（バグ）や古い観念（エゴ・シールド）を手放し、視点の転換（パラダイムシフト）を促すような短い気づきのメッセージ。
-    * 長さ: 140文字以内。
+    * 長さ: 100文字以内で極めて短く簡潔に（それ以上は字数超過エラーになるため厳守）。
     * タグ: 最後に必ず改行して「#アセンション #パラダイムシフト」をつける。
     """
     
@@ -51,8 +51,12 @@ def generate_tweet_content():
         text = response.text.strip()
         
         # simple validation for length
-        if len(text) > 140:
-            logging.warning("Generated text exceeds 140 characters, trimming might be needed.")
+        # simple validation for length
+        # Japanese characters take up more space in Twitter's backend length calculation
+        if len(text) > 135:
+            logging.warning(f"Trimming generated text from {len(text)} to 135 chars.")
+            # Trim the text but keep the hashtags at the end if possible, or just hard cut
+            text = text[:130] + "..."
             
         return text
     except Exception as e:
