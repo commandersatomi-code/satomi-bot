@@ -1,3 +1,4 @@
 supabase
 tweepy
 google-generativeai
+python-dotenv
