@@ -1,0 +1,14 @@
+2026-02-15 16:26:12,655 [INFO] 
+    ╔══════════════════════════════════════════╗
+    ║    🌀 Relative Grid Bot                  ║
+    ║    Mode: DRY RUN                          ║
+    ║    Symbol: BTCUSDT                        ║
+    ╚══════════════════════════════════════════╝
+    
+2026-02-15 16:26:13,874 [INFO] 🌀 Relative Grid Engine starting...
+2026-02-15 16:26:13,874 [INFO]   Started: RelativeGrid
+2026-02-15 16:26:13,875 [INFO]   Started: StatusReporter
+2026-02-15 16:26:15,403 [INFO]   Grid initialized: level=165, price=70,600, SMA200=68,809 (📈 ABOVE 2.6%), spacing≈4,942
+2026-02-15 16:26:30,128 [INFO] 
+🛑 Shutdown signal received...
+2026-02-15 16:26:32,129 [INFO] State saved. Goodbye. 🌀

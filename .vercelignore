@@ -1,0 +1,13 @@
+data/
+logs/
+archive/
+scripts/
+docs/
+__pycache__/
+*.png
+*.webp
+*.csv
+.env
+Consultation_Project/
+裏スロ/
+Xアカウント画像案/

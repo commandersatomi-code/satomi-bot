@@ -1,0 +1,19 @@
+2025-11-30 09:02:05,810 - INFO - --- Starting Comprehensive Backtest for 15-min Strategy (Compounding) ---
+2025-11-30 09:02:05,810 - INFO - Initial Capital: 30000.00 JPY
+2025-11-30 09:02:05,810 - INFO - MOVE_THRESHOLD_PCT: 3.00%
+2025-11-30 09:02:05,810 - INFO - TP: 5.00% | SL: -3.00%
+2025-11-30 09:02:05,944 - INFO - Data filtered up to 2024-11-15.
+2025-11-30 09:02:05,978 - INFO - Data loaded. Analyzing 162574 candles.
+2025-11-30 09:02:09,896 - INFO - Found 478 precursor signals for backtest.
+2025-11-30 09:02:10,039 - INFO - 
+--- Backtest Performance Summary (Compounding) ---
+2025-11-30 09:02:10,039 - INFO - Initial Capital: 30000.00 JPY
+2025-11-30 09:02:10,039 - INFO - Final Capital: 10538100856.77 JPY
+2025-11-30 09:02:10,039 - INFO - Total PnL (Compounded): 35126902.86%
+2025-11-30 09:02:10,039 - INFO - Total Trades: 478
+2025-11-30 09:02:10,039 - INFO - Win Rate: 87.03%
+2025-11-30 09:02:10,039 - INFO - Average Win: 3.37%
+2025-11-30 09:02:10,039 - INFO - Average Loss: -1.55%
+2025-11-30 09:02:10,039 - INFO - Profit Factor: 14.59
+2025-11-30 09:02:10,039 - INFO - Max Drawdown: -5.91%
+2025-11-30 09:02:10,039 - INFO - Sharpe Ratio (Annualized): 185.52

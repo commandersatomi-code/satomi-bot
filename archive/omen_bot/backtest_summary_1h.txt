@@ -1,0 +1,18 @@
+1時間足バックテスト結果の概要
+
+*   初期資金: 100,000円
+*   最終資産: 461,862,269円
+*   純利益: 461,762,269円 (461,762.27%)
+*   取引回数: 1540回
+
+使用されたパラメータ値は以下の通りです。
+
+### 売りシグナルのパラメータ
+*   HighestQuality: `vol_mult` = 2.0, `body_ratio` = 0.3
+*   Balanced: `vol_mult` = 1.6, `body_ratio` = 0.5
+*   Action: `vol_mult` = 1.2, `body_ratio` = 0.6
+
+### 買いシグナルのパラメータ
+*   HighestQuality: `vol_mult` = 2.0, `body_ratio` = 0.3
+*   Balanced: `vol_mult` = 1.7, `body_ratio` = 0.6
+*   Action: `vol_mult` = 1.3, `body_ratio` = 0.6

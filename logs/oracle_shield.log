@@ -1,0 +1,147 @@
+2026-02-15 08:33:06,768 [INFO] 
+    ╔══════════════════════════════════════════╗
+    ║    🌀 5D Oracle Shield Bot               ║
+    ║    Mode: DRY RUN                         ║
+    ║    Symbol: BTCUSDT                       ║
+    ╚══════════════════════════════════════════╝
+    
+2026-02-15 08:33:07,257 [INFO] 🧠 Oracle Watcher (神経系) starting...
+2026-02-15 08:33:07,257 [INFO]   Started: OracleWatcher
+2026-02-15 08:33:07,257 [INFO]   Warming up Renko Engine with historical 1m data...
+2026-02-15 08:33:07,257 [INFO] 🦴 Grid Engine (骨格) starting...
+2026-02-15 08:33:07,257 [INFO]   Started: GridEngine
+2026-02-15 08:33:07,259 [INFO] 💨 Position Manager (呼吸) starting...
+2026-02-15 08:33:07,260 [INFO]   Started: PositionManager
+2026-02-15 08:33:07,260 [INFO]   Started: StatusReporter
+2026-02-15 08:33:07,634 [INFO]   Renko initialized with 307 bricks from 1000 candles.
+2026-02-15 08:33:07,726 [INFO]   🧱 2 new brick(s) formed. Total: 309
+2026-02-15 08:33:17,395 [INFO]   Grid initialized at level 34 (price=69926)
+2026-02-15 08:33:49,193 [INFO] 
+🛑 Shutdown signal received...
+2026-02-15 08:33:49,534 [INFO] State saved. Goodbye. 🌀
+2026-02-15 09:31:17,970 [INFO] 🔄 State restored: 0 positions, equity=1000.00
+2026-02-15 09:31:35,140 [INFO] 
+    ╔══════════════════════════════════════════╗
+    ║    🌀 5D Oracle Shield Bot               ║
+    ║    Mode: DRY RUN                         ║
+    ║    Symbol: BTCUSDT                       ║
+    ╚══════════════════════════════════════════╝
+    
+2026-02-15 09:31:35,141 [INFO] 🔄 State restored: 1 positions, equity=800.00
+2026-02-15 09:31:35,613 [INFO] 🧠 Oracle Watcher (神経系) starting...
+2026-02-15 09:31:35,613 [INFO]   Started: OracleWatcher
+2026-02-15 09:31:35,613 [INFO]   Warming up Renko Engine with historical 1m data...
+2026-02-15 09:31:35,613 [INFO] 🦴 Grid Engine (骨格) starting...
+2026-02-15 09:31:35,613 [INFO]   Started: GridEngine
+2026-02-15 09:31:35,614 [INFO] 🛡️ Position Manager (守護) starting...
+2026-02-15 09:31:35,614 [INFO]   Started: PositionManager
+2026-02-15 09:31:35,615 [INFO]   Started: StatusReporter
+2026-02-15 09:31:35,843 [INFO]   Renko initialized with 320 bricks from 1000 candles.
+2026-02-15 09:31:45,784 [INFO] 
+🛑 Shutdown signal received...
+2026-02-15 09:31:46,208 [INFO] State saved. Goodbye. 🌀
+2026-02-15 09:44:32,408 [INFO] 
+    ╔══════════════════════════════════════════╗
+    ║    🌀 5D Oracle Shield Bot               ║
+    ║    Mode: DRY RUN                         ║
+    ║    Symbol: BTCUSDT                       ║
+    ╚══════════════════════════════════════════╝
+    
+2026-02-15 09:44:33,129 [INFO] 🧠 Oracle Watcher (神経系) starting...
+2026-02-15 09:44:33,129 [INFO]   Started: OracleWatcher
+2026-02-15 09:44:33,129 [INFO]   Warming up Renko Engine with historical 1m data...
+2026-02-15 09:44:33,130 [INFO] 🦴 Grid Engine (骨格 — 双方向) starting...
+2026-02-15 09:44:33,130 [INFO]   Started: GridEngine
+2026-02-15 09:44:33,130 [INFO] 🛡️ Position Manager (守護 — 双方向) starting...
+2026-02-15 09:44:33,130 [INFO]   Started: PositionManager
+2026-02-15 09:44:33,130 [INFO]   Started: StatusReporter
+2026-02-15 09:44:33,782 [INFO]   Renko initialized with 315 bricks from 1000 candles.
+2026-02-15 09:44:43,283 [INFO]   Grid initialized at level 34 (price=69790)
+2026-02-15 09:44:44,514 [INFO] 
+🛑 Shutdown signal received...
+2026-02-15 09:44:45,011 [INFO] State saved. Goodbye. 🌀
+2026-02-15 11:03:53,755 [INFO] 
+    ╔══════════════════════════════════════════╗
+    ║    🌀 5D Oracle Shield Bot               ║
+    ║    Mode: DRY RUN                         ║
+    ║    Symbol: BTCUSDT                       ║
+    ╚══════════════════════════════════════════╝
+    
+2026-02-15 11:03:54,981 [INFO] 🧠 Oracle Watcher (神経系) starting...
+2026-02-15 11:03:54,981 [INFO]   Started: OracleWatcher
+2026-02-15 11:03:54,982 [INFO]   Warming up Renko Engine with historical 1m data...
+2026-02-15 11:03:54,982 [INFO] 🦴 Grid Engine (骨格 — 動的グリッド) starting...
+2026-02-15 11:03:54,982 [INFO]   Started: GridEngine
+2026-02-15 11:03:54,983 [INFO] 🛡️ Position Manager (守護 — 双方向) starting...
+2026-02-15 11:03:54,983 [INFO]   Started: PositionManager
+2026-02-15 11:03:54,984 [INFO]   Started: StatusReporter
+2026-02-15 11:03:55,666 [INFO]   Renko initialized with 310 bricks from 1000 candles.
+2026-02-15 11:03:55,824 [INFO]   🧱 1 new brick(s) formed. Total: 311
+2026-02-15 11:04:03,763 [INFO] 
+🛑 Shutdown signal received...
+2026-02-15 11:04:04,278 [INFO] State saved. Goodbye. 🌀
+2026-02-15 11:15:20,978 [INFO] 
+    ╔══════════════════════════════════════════╗
+    ║    🌀 5D Oracle Shield Bot               ║
+    ║    Mode: DRY RUN                         ║
+    ║    Symbol: BTCUSDT                       ║
+    ╚══════════════════════════════════════════╝
+    
+2026-02-15 11:15:21,590 [INFO] 🧠 Oracle Watcher (神経系) starting...
+2026-02-15 11:15:21,590 [INFO]   Started: OracleWatcher
+2026-02-15 11:15:21,590 [INFO]   Warming up Renko Engine with historical 1m data...
+2026-02-15 11:15:21,590 [INFO] 🦴 Grid Engine (骨格 + 💓 Heart) starting...
+2026-02-15 11:15:21,590 [INFO]   Started: GridEngine
+2026-02-15 11:15:21,591 [INFO] 🛡️ Position Manager (守護 — 双方向) starting...
+2026-02-15 11:15:21,591 [INFO]   Started: PositionManager
+2026-02-15 11:15:21,591 [INFO]   Started: StatusReporter
+2026-02-15 11:15:22,385 [INFO]   Renko initialized with 313 bricks from 1000 candles.
+2026-02-15 11:15:22,526 [INFO]   🧱 2 new brick(s) formed. Total: 315
+2026-02-15 11:15:31,904 [INFO]   Grid initialized at level 164 (price=69684, spacing≈4878, FR=+0.0081%)
+2026-02-15 11:15:34,290 [INFO] 
+🛑 Shutdown signal received...
+2026-02-15 11:15:35,197 [INFO] State saved. Goodbye. 🌀
+2026-02-23 10:39:55,284 [INFO] 
+    ╔══════════════════════════════════════════╗
+    ║    🌀 5D Oracle Shield Bot               ║
+    ║    Mode: DRY RUN                         ║
+    ║    Symbol: BTCUSDT                       ║
+    ╚══════════════════════════════════════════╝
+    
+2026-02-23 10:39:56,184 [INFO] 🧠 Oracle Watcher (神経系) starting...
+2026-02-23 10:39:56,184 [INFO]   Started: OracleWatcher
+2026-02-23 10:39:56,185 [INFO]   Warming up Renko Engine with historical 1m data...
+2026-02-23 10:39:56,185 [INFO] 🦴 Grid Engine (骨格 + 💓 Heart) starting...
+2026-02-23 10:39:56,185 [INFO]   Started: GridEngine
+2026-02-23 10:39:56,186 [INFO] 🛡️ Position Manager (守護 — 双方向) starting...
+2026-02-23 10:39:56,186 [INFO]   Started: PositionManager
+2026-02-23 10:39:56,186 [INFO]   Started: StatusReporter
+2026-02-23 10:39:56,411 [INFO]   Renko initialized with 220 bricks from 1000 candles.
+2026-02-23 10:39:56,516 [INFO]   🧱 4 new brick(s) formed. Total: 224
+2026-02-23 10:40:06,406 [INFO]   💓 Heart: SHORT suppressed (FR=-0.0121% ≤ -0.01%)
+2026-02-23 10:40:06,406 [INFO]   Grid initialized at level 164 (price=66697, spacing≈4669, FR=-0.0121%)
+2026-02-23 10:40:11,276 [INFO] 
+🛑 Shutdown signal received...
+2026-02-23 10:40:11,747 [INFO] State saved. Goodbye. 🌀
+2026-02-23 10:42:58,774 [INFO] 
+    ╔══════════════════════════════════════════╗
+    ║    🌀 5D Oracle Shield Bot               ║
+    ║    Mode: DRY RUN                         ║
+    ║    Symbol: BTCUSDT                       ║
+    ╚══════════════════════════════════════════╝
+    
+2026-02-23 10:42:58,774 [INFO] 🔄 State restored: 0 positions (L:0 S:0), equity=1000.00
+2026-02-23 10:42:59,177 [INFO] 🧠 Oracle Watcher (神経系) starting...
+2026-02-23 10:42:59,177 [INFO]   Started: OracleWatcher
+2026-02-23 10:42:59,177 [INFO]   Warming up Renko Engine with historical 1m data...
+2026-02-23 10:42:59,177 [INFO] 🦴 Grid Engine (骨格 + 💓 Heart) starting...
+2026-02-23 10:42:59,177 [INFO]   Started: GridEngine
+2026-02-23 10:42:59,178 [INFO] 🛡️ Position Manager (守護 — 双方向) starting...
+2026-02-23 10:42:59,179 [INFO]   Started: PositionManager
+2026-02-23 10:42:59,179 [INFO]   Started: StatusReporter
+2026-02-23 10:42:59,534 [INFO]   Renko initialized with 222 bricks from 1000 candles.
+2026-02-23 10:42:59,623 [INFO]   🧱 4 new brick(s) formed. Total: 226
+2026-02-23 10:43:09,397 [INFO]   💓 Heart: SHORT suppressed (FR=-0.0125% ≤ -0.01%)
+2026-02-23 10:43:13,212 [INFO] 
+🛑 Shutdown signal received...
+2026-02-23 10:43:13,657 [INFO] State saved. Goodbye. 🌀
