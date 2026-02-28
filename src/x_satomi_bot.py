@@ -103,6 +103,8 @@ def main():
         logging.info("Bot execution completed successfully.")
     else:
         logging.error("Bot execution failed during X posting.")
+        import sys
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
