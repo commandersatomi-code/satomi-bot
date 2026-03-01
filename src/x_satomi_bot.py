@@ -24,8 +24,8 @@ def generate_tweet_content():
     
     【ルール】
     * 口調: フランクで少し姉御肌。「～わよ」「～かしら」等の語尾を使う。
-    * 内容: 指定されたテーマに沿って、ネガティブな感情（バグ）や古い観念（エゴ・シールド）を手放し、次元上昇を促すような短い気づきのメッセージ。
-    * 長さ: 100文字以内で極めて短く簡潔に（それ以上は字数超過エラーになるため厳守）。
+    * 内容: 指定されたテーマに沿って、ネガティブな感情（バグ）や古い観念（エゴ・シールド）を手放し、次元上昇を促すような本質的な気づきのメッセージ。
+    * 長さ: 120文字〜130文字程度で、短くても深く伝わる言葉を選ぶこと。（140文字を超えるとシステムエラーになるため、135文字を絶対上限とする）
     * タグ: 文末に必ず指定されたハッシュタグをつける。
     """
     
@@ -42,7 +42,7 @@ def generate_tweet_content():
     ]
     
     tag_candidates = [
-        "#アセンション", "#パラダイムシフト", "#バシャール", "#ハイヤーセルフ", 
+        "#アセンション", "#バシャール", "#ハイヤーセルフ", 
         "#引き寄せの法則", "#宇宙の法則", "#ワクワク", "#手放し", 
         "#自己統合", "#スターシード", "#5次元", "#次元上昇", "#波動", "#周波数",
         "#シンクロニシティ", "#スピリチュアル", "#潜在意識", "#エゴ"
@@ -66,8 +66,28 @@ def generate_tweet_content():
         # Japanese characters take up more space in Twitter's backend length calculation
         if len(text) > 135:
             logging.warning(f"Trimming generated text from {len(text)} to 135 chars.")
-            # Trim the text but keep the hashtags at the end if possible, or just hard cut
-            text = text[:130] + "..."
+            import re
+            # Extract hashtags
+            tags = re.findall(r'#\S+', text)
+            tag_str = " ".join(tags)
+            
+            # Remove tags from the original text temporarily to trim the message
+            msg_only = re.sub(r'#\S+', '', text).strip()
+            
+            allowed_msg_len = 135 - len(tag_str) - 3 # Space for newlines
+            
+            # Try to cut at the last Japanese period (。)
+            cut_msg = msg_only[:allowed_msg_len]
+            if '。' in cut_msg:
+                cut_msg = cut_msg.rsplit('。', 1)[0] + "。"
+            else:
+                cut_msg = cut_msg + "..."
+                
+            text = f"{cut_msg}\n\n{tag_str}"
+            
+            # Absolute hard cut just in case
+            if len(text) > 138:
+                text = text[:135]
             
         return text
     except Exception as e:
