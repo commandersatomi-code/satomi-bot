@@ -2,8 +2,8 @@ name: Satomi X Daily Post
 
 on:
   schedule:
-    # 毎日朝7時20分 (JST) に実行 (UTCで前日22時20分)
-    - cron: '20 22 * * *'
+    # JST 7:20, 12:20, 20:20 に実行 (UTCで前日22:20, 当日03:20, 11:20)
+    - cron: '20 22,3,11 * * *'
   # 手動実行用
   workflow_dispatch:
 
