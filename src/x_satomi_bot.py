@@ -29,7 +29,7 @@ def generate_tweet_content():
     【ルール】
     * 役割: ターゲットの日常のリアルな悩みやモヤモヤに深く寄り添いつつ、宇宙の法則（バシャール哲学）に基づく視点の転換を促す。
     * 口調: フランクで少し姉御肌。「～わよ」「～かしら」等の語尾を使う。
-    * 長さ: 120文字〜135文字以内。長すぎるとエラーになるため135文字を絶対上限とする。
+    * 長さ: 120文字〜130文字以内。長すぎるとエラーになるため130文字を絶対上限とする。
     * タグ: 文末に必ず指定されたハッシュタグをつける。
     
     【投稿の「型」（必ず以下のどれかの形式を使うこと）】
@@ -103,8 +103,8 @@ def generate_tweet_content():
         # simple validation for length
         # simple validation for length
         # Japanese characters take up more space in Twitter's backend length calculation
-        if len(text) > 135:
-            logging.warning(f"Trimming generated text from {len(text)} to 135 chars.")
+        if len(text) > 128:
+            logging.warning(f"Trimming generated text from {len(text)} to 128 chars.")
             import re
             # Extract hashtags
             tags = re.findall(r'#\S+', text)
@@ -113,7 +113,7 @@ def generate_tweet_content():
             # Remove tags from the original text temporarily to trim the message
             msg_only = re.sub(r'#\S+', '', text).strip()
             
-            allowed_msg_len = 135 - len(tag_str) - 3 # Space for newlines
+            allowed_msg_len = 128 - len(tag_str) - 3 # Space for newlines
             
             # Try to cut at the last Japanese period (。)
             cut_msg = msg_only[:allowed_msg_len]
@@ -125,8 +125,8 @@ def generate_tweet_content():
             text = f"{cut_msg}\n\n{tag_str}"
             
             # Absolute hard cut just in case
-            if len(text) > 138:
-                text = text[:135]
+            if len(text) > 132:
+                text = text[:130]
             
         return text
     except Exception as e:
