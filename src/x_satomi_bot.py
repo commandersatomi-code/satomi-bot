@@ -155,6 +155,13 @@ def post_to_x(text):
         response = client.create_tweet(text=text)
         logging.info(f"Successfully posted to X! Tweet ID: {response.data['id']}")
         return True
+    except tweepy.errors.TweepyException as e:
+        logging.error(f"X API Error: {e}")
+        try:
+            logging.error(f"Response: {e.response.text}")
+        except:
+            pass
+        return False
     except Exception as e:
         logging.error(f"X API Error: {e}")
         return False
