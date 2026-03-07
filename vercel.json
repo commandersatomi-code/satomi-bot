@@ -1,24 +1,16 @@
 {
   "version": 2,
-  "public": true,
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "/api/$1"
     },
     {
-      "src": "/(.*\\.(html|css|js|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf))",
-      "dest": "/public/$1"
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "/public/$1.html",
-      "status": 200,
-      "continue": true
-    },
-    {
-      "src": "/",
-      "dest": "/public/index.html"
+      "dest": "/index.html"
     }
   ]
 }
