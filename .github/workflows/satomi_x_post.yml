@@ -2,8 +2,11 @@ name: Satomi X Daily Post
 
 on:
   schedule:
-    # JST 7:20, 12:20, 20:20 に実行 (UTCで前日22:20, 当日03:20, 11:20)
-    - cron: '20 22,3,11 * * *'
+    # JST 7:20, 12:20, 19:00, 22:30 に実行 (UTC 22:20, 3:20, 10:00, 13:30)
+    - cron: '20 22 * * *'
+    - cron: '20 3 * * *'
+    - cron: '0 10 * * *'
+    - cron: '30 13 * * *'
   # 手動実行用
   workflow_dispatch:
 
@@ -32,4 +35,5 @@ jobs:
           X_API_KEY_SECRET: ${{ secrets.X_API_KEY_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
-        run: python src/x_satomi_bot.py
+          LINE_BOT_URL: ${{ secrets.LINE_BOT_URL }}
+        run: python src/content/x_satomi_bot.py

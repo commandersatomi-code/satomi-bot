@@ -1,4 +1,15 @@
 supabase
 tweepy
 google-generativeai
+google-genai
 python-dotenv
+requests
+flask
+line-bot-sdk
+pybit
+gtts
+moviepy
+Pillow
+numpy
+pandas
+stripe

@@ -32,7 +32,7 @@ import requests
 import importlib.util
 
 # --- Load Config ---
-config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'config.py'))
+config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../config.py'))
 spec = importlib.util.spec_from_file_location("config", config_path)
 config = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(config)

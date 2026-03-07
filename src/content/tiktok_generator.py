@@ -13,8 +13,10 @@ import google.genai as genai
 # --- Configuration ---
 WIDTH, HEIGHT = 1080, 1920
 FPS = 30
-EXPORT_DIR = "exports"
-ASSETS_DIR = "src/assets"
+_ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_SRC_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+EXPORT_DIR = os.path.join(_ROOT_DIR, "exports")
+ASSETS_DIR = os.path.join(_SRC_DIR, "assets")
 IMG_DIR = os.path.join(ASSETS_DIR, "images")
 FONT_DIR = os.path.join(ASSETS_DIR, "fonts")
 
