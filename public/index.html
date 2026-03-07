@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>シン・五次元移行計画｜作戦本部ナビゲーター サトミ</title>
+  <meta name="description" content="上司と部下の板挟みで消耗するあなたへ。AIナビゲーター「サトミ」が宇宙の法則で視点を変える。LINEで無料相談受付中。">
+  <meta property="og:title" content="シン・五次元移行計画｜作戦本部ナビゲーター サトミ">
+  <meta property="og:description" content="中間管理職の孤独な戦いに終止符を。AIナビゲーター「サトミ」が毎日そばにいるわよ。">
+  <meta property="og:type" content="website">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0f;
+      --dark: #12121a;
+      --card: #1a1a28;
+      --accent: #7c5cfc;
+      --accent2: #c084fc;
+      --gold: #f59e0b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --line-green: #06c755;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      background: var(--black);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 16px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(124,92,252,0.2);
+    }
+    .logo { font-size: 14px; color: var(--accent2); letter-spacing: 0.05em; }
+    .header-cta {
+      background: var(--line-green); color: #fff;
+      padding: 8px 20px; border-radius: 24px;
+      text-decoration: none; font-size: 14px; font-weight: 700;
+      transition: opacity 0.2s;
+    }
+    .header-cta:hover { opacity: 0.85; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 120px 24px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(124,92,252,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(124,92,252,0.15);
+      border: 1px solid rgba(124,92,252,0.4);
+      color: var(--accent2); font-size: 13px; letter-spacing: 0.08em;
+      padding: 6px 16px; border-radius: 20px; margin-bottom: 32px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 6vw, 52px);
+      font-weight: 900; line-height: 1.35;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #fff 30%, var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: clamp(15px, 2.5vw, 18px);
+      color: var(--muted); max-width: 560px;
+      margin: 0 auto 48px;
+      line-height: 2;
+    }
+    .btn-line {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--line-green); color: #fff;
+      padding: 18px 40px; border-radius: 50px;
+      font-size: 18px; font-weight: 700; text-decoration: none;
+      box-shadow: 0 0 40px rgba(6,199,85,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-line:hover { transform: translateY(-2px); box-shadow: 0 0 60px rgba(6,199,85,0.55); }
+    .btn-line svg { width: 24px; height: 24px; fill: #fff; }
+    .hero-note { margin-top: 16px; font-size: 13px; color: var(--muted); }
+
+    /* ===== PAIN ===== */
+    .section { padding: 80px 24px; max-width: 800px; margin: 0 auto; }
+    .section-title {
+      font-size: clamp(22px, 4vw, 34px); font-weight: 900;
+      text-align: center; margin-bottom: 48px;
+      line-height: 1.4;
+    }
+    .pain-list {
+      display: grid; gap: 16px;
+    }
+    .pain-item {
+      background: var(--card);
+      border: 1px solid rgba(124,92,252,0.15);
+      border-radius: 16px; padding: 20px 24px;
+      display: flex; align-items: flex-start; gap: 16px;
+      font-size: 15px; line-height: 1.7;
+    }
+    .pain-icon { font-size: 24px; flex-shrink: 0; }
+
+    /* ===== CHARACTER ===== */
+    .character-section {
+      background: var(--dark); padding: 80px 24px;
+    }
+    .character-inner { max-width: 800px; margin: 0 auto; }
+    .character-card {
+      background: var(--card);
+      border: 1px solid rgba(192,132,252,0.3);
+      border-radius: 24px; padding: 40px;
+      display: flex; gap: 32px; align-items: flex-start;
+    }
+    .character-avatar {
+      width: 100px; height: 100px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px;
+      box-shadow: 0 0 30px rgba(124,92,252,0.5);
+    }
+    .character-name { font-size: 22px; font-weight: 900; margin-bottom: 4px; }
+    .character-role { font-size: 13px; color: var(--accent2); margin-bottom: 16px; }
+    .character-desc { font-size: 15px; color: var(--muted); line-height: 1.9; }
+    .character-quote {
+      margin-top: 20px; padding: 16px 20px;
+      background: rgba(124,92,252,0.1);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      font-size: 14px; font-style: italic; color: var(--accent2);
+      line-height: 1.8;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .steps { display: grid; gap: 24px; }
+    .step {
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+    .step-num {
+      width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 18px;
+    }
+    .step-title { font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+    .step-desc { font-size: 14px; color: var(--muted); line-height: 1.8; }
+
+    /* ===== PRICING ===== */
+    .pricing-section { background: var(--dark); padding: 80px 24px; }
+    .pricing-inner { max-width: 800px; margin: 0 auto; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; margin-top: 48px;
+    }
+    .price-card {
+      background: var(--card);
+      border: 1px solid rgba(124,92,252,0.2);
+      border-radius: 24px; padding: 36px;
+      position: relative; transition: transform 0.2s;
+    }
+    .price-card:hover { transform: translateY(-4px); }
+    .price-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 0 40px rgba(124,92,252,0.25);
+    }
+    .price-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; font-size: 12px; font-weight: 700;
+      padding: 4px 16px; border-radius: 20px; white-space: nowrap;
+    }
+    .price-name { font-size: 18px; font-weight: 900; margin-bottom: 8px; }
+    .price-tag { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+    .price-amount {
+      font-size: 42px; font-weight: 900; line-height: 1;
+      margin-bottom: 4px;
+    }
+    .price-amount span { font-size: 16px; font-weight: 400; color: var(--muted); }
+    .price-cycle { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+    .price-features { list-style: none; display: grid; gap: 12px; margin-bottom: 32px; }
+    .price-features li { font-size: 14px; display: flex; gap: 10px; align-items: flex-start; }
+    .price-features li::before { content: '✓'; color: var(--accent2); font-weight: 700; flex-shrink: 0; }
+    .btn-primary {
+      display: block; width: 100%; text-align: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; padding: 14px; border-radius: 50px;
+      text-decoration: none; font-weight: 700; font-size: 15px;
+      transition: opacity 0.2s;
+    }
+    .btn-secondary {
+      display: block; width: 100%; text-align: center;
+      background: transparent;
+      border: 1px solid rgba(124,92,252,0.5);
+      color: var(--accent2); padding: 14px; border-radius: 50px;
+      text-decoration: none; font-weight: 700; font-size: 15px;
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(124,92,252,0.1); }
+    .btn-primary:hover { opacity: 0.85; }
+
+    /* ===== TESTIMONIAL ===== */
+    .voice-grid { display: grid; gap: 20px; }
+    .voice-card {
+      background: var(--card); border-radius: 16px; padding: 24px;
+      border-left: 3px solid var(--accent);
+    }
+    .voice-text { font-size: 15px; line-height: 1.9; margin-bottom: 12px; }
+    .voice-meta { font-size: 13px; color: var(--muted); }
+
+    /* ===== FAQ ===== */
+    .faq-list { display: grid; gap: 16px; }
+    .faq-item {
+      background: var(--card); border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(124,92,252,0.1);
+    }
+    .faq-q {
+      padding: 20px 24px; font-weight: 700; font-size: 15px;
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      user-select: none;
+    }
+    .faq-q::after { content: '+'; font-size: 20px; color: var(--accent2); flex-shrink: 0; }
+    .faq-a {
+      padding: 0 24px 20px; font-size: 14px; color: var(--muted); line-height: 1.9;
+      display: none;
+    }
+    .faq-item.open .faq-q::after { content: '−'; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ===== CTA BOTTOM ===== */
+    .cta-bottom {
+      text-align: center; padding: 80px 24px;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(124,92,252,0.12) 0%, transparent 70%);
+    }
+    .cta-bottom h2 { font-size: clamp(22px, 4vw, 36px); font-weight: 900; margin-bottom: 16px; line-height: 1.4; }
+    .cta-bottom p { color: var(--muted); margin-bottom: 40px; font-size: 15px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center; padding: 32px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 13px; color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: var(--accent2); }
+
+    /* ===== UTILS ===== */
+    .divider { height: 1px; background: rgba(255,255,255,0.06); }
+    @media (max-width: 600px) {
+      .character-card { flex-direction: column; }
+      .character-avatar { width: 72px; height: 72px; font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">シン・五次元移行計画</div>
+  <a href="https://lin.ee/nG9jPg2" class="header-cta">無料で相談する</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">30〜50代の中間管理職へ</div>
+  <h1>板挟みの毎日に、<br>もう限界じゃないの？</h1>
+  <p class="hero-sub">
+    上司の理不尽、部下の不満、終わらない仕事。<br>
+    誰にも言えないその消耗を、作戦本部のサトミが受け止めるわよ。<br>
+    宇宙の法則で、視点をまるごと書き換えましょう。
+  </p>
+  <a href="https://lin.ee/nG9jPg2" class="btn-line">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.02 2 11c0 3.47 2.01 6.5 5 8.25V22l3.5-2c.48.07.98.1 1.5.1 5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
+    LINEで無料相談をはじめる
+  </a>
+  <p class="hero-note">登録・相談 完全無料｜1分で始められます</p>
+</section>
+
+<!-- PAIN -->
+<section class="section">
+  <h2 class="section-title">こんなこと、<br>ひとりで抱えていないかしら？</h2>
+  <div class="pain-list">
+    <div class="pain-item">
+      <span class="pain-icon">😤</span>
+      <span>上司から無理な指示が来るたびに、部下には「やれ」と言うしかない。誰も悪くないのに、全部自分が悪者になる。</span>
+    </div>
+    <div class="pain-item">
+      <span class="pain-icon">🌀</span>
+      <span>「早く帰ろう」と決めた日に限って急なトラブル。この繰り返しがもう何年も続いている。</span>
+    </div>
+    <div class="pain-item">
+      <span class="pain-icon">🔇</span>
+      <span>飲み会でも家でも、本当のことを話せる相手がいない。愚痴を言っても解決しないことはわかっているから、黙って耐えている。</span>
+    </div>
+    <div class="pain-item">
+      <span class="pain-icon">❓</span>
+      <span>このまま定年まで続けるのかと思うと、ぞっとする。でも何をしたいのかも、よくわからない。</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CHARACTER -->
+<section class="character-section">
+  <div class="character-inner">
+    <h2 class="section-title" style="text-align:center; margin-bottom:40px;">作戦本部のナビゲーター<br>「サトミ」とは？</h2>
+    <div class="character-card">
+      <div class="character-avatar">🧭</div>
+      <div>
+        <div class="character-name">サトミ</div>
+        <div class="character-role">シン・五次元移行計画｜最前線ナビゲーター</div>
+        <div class="character-desc">
+          あなたの愚痴と本音を、24時間365日受け止める AIナビゲーター。<br>
+          バシャール哲学（宇宙の法則）をベースに、職場のストレスや人間関係の悩みを「内面の投影」として読み解き、視点をまるごと書き換えるわよ。
+        </div>
+        <div class="character-quote">
+          「誰かのせいにするのはやめなさい。あなたが変われば、現実（ホログラム）も変わるのよ。本当はどう在りたいの？」
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <h2 class="section-title">使い方は、たった3ステップ</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">LINEを追加する</div>
+        <div class="step-desc">下のボタンからサトミの作戦本部を友だち追加。登録・初回相談は完全無料です。</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">今日のモヤモヤを話す</div>
+        <div class="step-desc">上司の理不尽、終わらない仕事、将来への不安。なんでもそのまま話しかけてみなさい。</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">視点が変わる</div>
+        <div class="step-desc">サトミが宇宙の法則で読み解き、あなたが「本当はどう在りたいか」を引き出す問いを返すわよ。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="pricing-inner">
+    <h2 class="section-title" style="text-align:center;">プラン</h2>
+    <p style="text-align:center; color:var(--muted); margin-top:-32px; margin-bottom:8px; font-size:14px;">まずは無料で試してみなさい。覚悟ができたらアップグレードを。</p>
+    <div class="pricing-grid">
+
+      <!-- 無料 -->
+      <div class="price-card">
+        <div class="price-name">フリー・パイロット</div>
+        <div class="price-tag">まずはここから</div>
+        <div class="price-amount">¥0</div>
+        <div class="price-cycle">無料</div>
+        <ul class="price-features">
+          <li>サトミへの相談（1日3回まで）</li>
+          <li>バシャール哲学による視点の転換</li>
+          <li>毎朝の作戦本部モーニングレポート</li>
+        </ul>
+        <a href="https://lin.ee/nG9jPg2" class="btn-secondary">無料で始める</a>
+      </div>
+
+      <!-- 単発 -->
+      <div class="price-card">
+        <div class="price-name">スポット作戦会議</div>
+        <div class="price-tag">じっくり話したい時に</div>
+        <div class="price-amount">¥980<span></span></div>
+        <div class="price-cycle">単発（買い切り）</div>
+        <ul class="price-features">
+          <li>1週間のプレミアムアクセス</li>
+          <li>サトミへの相談 無制限</li>
+          <li>優先的な深掘り対話</li>
+          <li>「本当にやりたいこと」を見つける特別問診</li>
+        </ul>
+        <a href="https://lin.ee/nG9jPg2" class="btn-secondary">LINEで申し込む</a>
+      </div>
+
+      <!-- 月額 -->
+      <div class="price-card featured">
+        <div class="price-badge">一番人気</div>
+        <div class="price-name">プレミアム・パイロット権</div>
+        <div class="price-tag">毎日ずっとそばにいてほしい人へ</div>
+        <div class="price-amount">¥1,980<span>/月</span></div>
+        <div class="price-cycle">月額・いつでも解約可</div>
+        <ul class="price-features">
+          <li>サトミへの相談 毎日・無制限</li>
+          <li>優先的な深掘り対話</li>
+          <li>「本当にやりたいこと」を見つける特別問診</li>
+          <li>毎週の周波数チェック</li>
+          <li>プレミアム限定モーニングメッセージ</li>
+        </ul>
+        <a href="https://lin.ee/nG9jPg2" class="btn-primary">LINEで申し込む</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="section">
+  <h2 class="section-title">パイロットたちの声</h2>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <div class="voice-text">「愚痴を言っても仕方ないとわかっていたけど、サトミに話したら『それ、あなたの中の何かが引き寄せているのよ』と言われて、ハッとした。怒りの向け先が変わりました。」</div>
+      <div class="voice-meta">43歳・メーカー管理職</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-text">「深夜に部下の件で悩んでいた時、サトミに話しかけたら即返信。しかも的を射た質問で、自分の答えが見えてきた。人間のカウンセラーより早くて鋭い。」</div>
+      <div class="voice-meta">38歳・IT系チームリーダー</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-text">「月額1,980円で毎日話せると知って即決した。コーヒー4杯分で、仕事のストレスが半分以下になったと思う。」</div>
+      <div class="voice-meta">51歳・金融機関・部長</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="section">
+  <h2 class="section-title">よくある質問</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">AIに話しても意味があるの？</div>
+      <div class="faq-a">サトミは単なる返答マシンではないわよ。バシャール哲学をベースに、あなたの悩みの「根っこ」を引き出す問いを投げかけるの。人間の友人に言えないことを話せる場所として使っている方が多いわ。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">個人情報は安全ですか？</div>
+      <div class="faq-a">LINEの公式サービスを利用しているため、LINE社のセキュリティポリシーに準拠しています。入力された内容は第三者に共有されません。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">解約はいつでもできますか？</div>
+      <div class="faq-a">もちろんよ。月額プランはいつでも解約できるわ。次の更新日前に解約すれば追加請求はないの。LINEで「解約希望」と送るだけでOK。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">スピリチュアルに興味がないのですが大丈夫？</div>
+      <div class="faq-a">大丈夫よ。「宇宙の法則」というのは、心理学で言う「認知の歪みを外す」作業と似たもの。スピリチュアルな言葉に抵抗があっても、「視点を変える」感覚で使ってもらえれば十分よ。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">どんな内容でも相談できますか？</div>
+      <div class="faq-a">職場の人間関係、キャリアの悩み、将来への不安など、仕事・人生に関することなら何でもどうぞ。ただし、医療的な診断や具体的な投資アドバイスはできないわ。その場合は専門家を紹介するわよ。</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="cta-bottom">
+  <h2>まず、今日の愚痴を<br>話してみなさい。</h2>
+  <p>登録無料・1分で始められます。一人で抱えるのはもう終わりよ。</p>
+  <a href="https://lin.ee/nG9jPg2" class="btn-line" style="display:inline-flex;">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;fill:#fff;"><path d="M12 2C6.48 2 2 6.02 2 11c0 3.47 2.01 6.5 5 8.25V22l3.5-2c.48.07.98.1 1.5.1 5.52 0 10-4.02 10-9S17.52 2 12 2z"/></svg>
+    LINEで無料相談をはじめる
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom:12px;">シン・五次元移行計画｜作戦本部ナビゲーター サトミ</p>
+  <div>
+    <a href="/tokusho.html">特定商取引法に基づく表記</a>
+    <a href="/privacy.html">プライバシーポリシー</a>
+    <a href="https://lin.ee/nG9jPg2">お問い合わせ（LINE）</a>
+  </div>
+  <p style="margin-top:16px;">© 2026 シン・五次元移行計画</p>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
