@@ -1,16 +1,12 @@
 {
   "version": 2,
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+    { "src": "/api/stripe-webhook", "dest": "/api/stripe_webhook.py" },
+    { "src": "/api(.*)", "dest": "/api/index.py" },
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/terms", "dest": "/terms.html" },
+    { "src": "/privacy", "dest": "/privacy.html" },
+    { "src": "/tokusho", "dest": "/tokusho.html" },
+    { "src": "/(.*)\\.html$", "dest": "/$1.html" }
   ]
 }
