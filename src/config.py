@@ -5,14 +5,13 @@ import os
 
 # --- APIキー設定 ---
 # ライブ取引には使用しませんが、データ取得のために設定
-BYBIT_API_KEY = "59pB2v2TDUpAZEuSX3"
-BYBIT_API_SECRET = "ut6uiGKlJkCTqGE7pVJVkhXNJcYfktABILb1"
+BYBIT_API_KEY = os.getenv("BYBIT_API_KEY", "")
+BYBIT_API_SECRET = os.getenv("BYBIT_API_SECRET", "")
 
 
 # --- Gemini API 設定 ---
-GEMINI_API_KEY = "AIzaSyCmHQ6bklO6sdWikahQ25RrhFF77p3kSwQ"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 GEMINI_PROJECT_NAME = "gen-lang-client-0908826635"
-
 
 
 # --- 取引所・データ設定 ---

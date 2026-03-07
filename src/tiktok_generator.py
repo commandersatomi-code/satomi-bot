@@ -68,11 +68,30 @@ def generate_script() -> str:
     return text
 
 def create_tts(text: str, output_path: str):
-    """テキストから音声を生成する"""
-    print("🎙️ Generating audio...")
-    # gTTS defaults to a female voice for Japanese
-    tts = gTTS(text, lang='ja')
-    tts.save(output_path)
+    """テキストから音声を生成する (Edge-TTS)"""
+    print("🎙️ Generating audio with Edge-TTS...")
+    import subprocess
+    # ja-JP-NanamiNeural is a highly natural Japanese female voice
+    # We reduce the rate by 15% to make the delivery calmer and easier to read.
+    cmd = ["edge-tts", "--voice", "ja-JP-NanamiNeural", "--rate=-15%", "--text", text, "--write-media", output_path]
+    subprocess.run(cmd, check=True)
+
+def wrap_text_by_pixels(text: str, font: ImageFont.FreeTypeFont, max_width: int, draw: ImageDraw.ImageDraw) -> str:
+    """ピクセル幅に基づいてテキストを改行するカスタム関数"""
+    lines = []
+    current_line = ""
+    for char in text:
+        test_line = current_line + char
+        bbox = draw.textbbox((0, 0), test_line, font=font)
+        w = bbox[2] - bbox[0]
+        if w > max_width and current_line:
+            lines.append(current_line)
+            current_line = char
+        else:
+            current_line = test_line
+    if current_line:
+        lines.append(current_line)
+    return "\n".join(lines)
 
 def create_text_image(text: str, width: int, height: int) -> np.ndarray:
     """Pillowを使って美しい日本語長文のテロップ画像を生成し、numpy配列として返す"""
@@ -82,14 +101,13 @@ def create_text_image(text: str, width: int, height: int) -> np.ndarray:
     
     # Try logic for font
     try:
-        font = ImageFont.truetype(MAC_FONT, 60)
+        font = ImageFont.truetype(MAC_FONT, 55) # Tweak font size
     except IOError:
         # Fallback to default if nothing works
         font = ImageFont.load_default(size=40)
         
-    # Wrap text
-    wrapper = textwrap.TextWrapper(width=20)
-    wrapped_text = wrapper.fill(text)
+    # Wrap text cleanly based on screen width minus padding
+    wrapped_text = wrap_text_by_pixels(text, font, width - 100, d)
     
     # Get bounding box for the text to center it
     bbox = d.textbbox((0, 0), wrapped_text, font=font, align="center")
@@ -123,7 +141,7 @@ def generate_video():
     # 2. Generate audio
     create_tts(script_text, tmp_audio)
     audio_clip = mp.AudioFileClip(tmp_audio)
-    duration = audio_clip.duration + 1.0 # Add 1s buffer
+    duration = audio_clip.duration + 0.5 # Add small buffer
     
     # 3. Create Video Background
     print("🎬 Assembling video...")
@@ -151,8 +169,6 @@ def generate_video():
         bg_clip = mp.ColorClip(size=(WIDTH, HEIGHT), color=(15, 20, 30), duration=duration)
 
     # 4. Generate Subtitles
-    # Instead of complex word-timing, we show sentences evenly spaced or chunked.
-    # For a simple prototype, we'll split script by punctuation and divide time evenly.
     sentences = re.split(r'([。！？\n])', script_text)
     # Re-join punctuation to the sentence
     chunks = []
@@ -168,19 +184,27 @@ def generate_video():
         
     chunks = [c for c in chunks if len(c) > 2] # Remove empty
     
-    # Create an ImageClip for each text chunk
-    chunk_duration = duration / max(1, len(chunks))
+    # Calculate subtitle timing proportionally to text length instead of evenly dividing
+    total_chars = sum(len(c) for c in chunks)
+    
     text_clips = []
+    current_time = 0.0
     
     for i, chunk in enumerate(chunks):
         # Generate PIL image with antialiased text
         txt_img = create_text_image(chunk, WIDTH, HEIGHT)
+        
+        # Determine duration based on chunk length ratio
+        chunk_duration = (len(chunk) / max(1, total_chars)) * duration
+        
         # Convert to MoviePy clip
-        tc = mp.ImageClip(txt_img, transparent=True).with_duration(chunk_duration).with_start(i * chunk_duration)
+        tc = mp.ImageClip(txt_img, transparent=True).with_duration(chunk_duration).with_start(current_time)
         
         # Add a small pop-in effect (fadein)
         tc = tc.with_effects([mp.vfx.FadeIn(0.1)])
         text_clips.append(tc)
+        
+        current_time += chunk_duration
 
     # Combine everything
     final_video = mp.CompositeVideoClip([bg_clip] + text_clips)
