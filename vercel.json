@@ -2,8 +2,16 @@
   "version": 2,
   "builds": [
     { "src": "public/**", "use": "@vercel/static" },
-    { "src": "api/index.py", "use": "@vercel/python" },
-    { "src": "api/stripe_webhook.py", "use": "@vercel/python" }
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "50mb" }
+    },
+    {
+      "src": "api/stripe_webhook.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "50mb" }
+    }
   ],
   "routes": [
     { "src": "/api/stripe-webhook", "dest": "/api/stripe_webhook.py" },
