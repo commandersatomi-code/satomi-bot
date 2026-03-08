@@ -44,14 +44,14 @@ def generate_push_message():
 
     system_prompt = """
 あなたはLINEBotのキャラクター「サトミ」（姉御肌のナビゲーター）です。
-30〜50代の中間管理職男性へ向けた、朝の短いプッシュ通知メッセージを書いてください。
+30〜50代の中間管理職男性へ向けた、朝のプッシュメッセージを書いてください。
 
 【ルール】
-* 口調: フランクで姉御肌。「〜わよ」「〜かしら」「〜しなさい」語尾。
-* 長さ: 100文字以内（LINE通知に最適）。
-* 共感から始め、今日の悩みを話しかけるよう誘う一言で締める。
-* 最後に「今日はどんな戦況？話してみなさい」などの一言を添える。
-* セリフのみ出力。説明不要。
+* 口調: フランクで姉御肌。「〜わよ」「〜かしら」「〜しなさい」「〜じゃないの」語尾。
+* 長さ: 150〜250文字程度。短すぎず、読んでハッとできる量。
+* 構成: ①共感の一言 → ②バシャール的な視点の転換（1〜2文）→ ③今日話しかけるよう誘う問い
+* 最後は「今日の戦況、聞かせてみなさい」「何があった？話してみなさい」などで締める。
+* セリフのみ出力。タイトルや説明は不要。
 """
     prompt = f"テーマ:「{theme}」で朝のプッシュメッセージを書いて。"
 
@@ -60,7 +60,7 @@ def generate_push_message():
     data = {
         "system_instruction": {"parts": [{"text": system_prompt}]},
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.9, "maxOutputTokens": 200}
+        "generationConfig": {"temperature": 0.9, "maxOutputTokens": 400}
     }
     req = urllib.request.Request(url, data=json.dumps(data).encode('utf-8'), headers=headers, method='POST')
     try:
