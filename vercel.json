@@ -1,12 +1,15 @@
 {
   "version": 2,
+  "builds": [
+    { "src": "public/**", "use": "@vercel/static" },
+    { "src": "api/index.py", "use": "@vercel/python" },
+    { "src": "api/stripe_webhook.py", "use": "@vercel/python" }
+  ],
   "routes": [
     { "src": "/api/stripe-webhook", "dest": "/api/stripe_webhook.py" },
     { "src": "/api(.*)", "dest": "/api/index.py" },
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/terms", "dest": "/terms.html" },
-    { "src": "/privacy", "dest": "/privacy.html" },
-    { "src": "/tokusho", "dest": "/tokusho.html" },
-    { "src": "/(.*)\\.html$", "dest": "/$1.html" }
+    { "src": "/", "dest": "/public/index.html" },
+    { "src": "/(.*)\\.html$", "dest": "/public/$1.html" },
+    { "src": "/(.*)", "dest": "/public/$1" }
   ]
 }
